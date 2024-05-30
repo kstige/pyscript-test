@@ -8,9 +8,14 @@
     ></script>
 </head>
 <body>
-    <script type="py" terminal>
-        from pyscript import display
-        display("Hello World!") # this goes to the DOM
-        print("Hello terminal") # this goes to the terminal
-    </script>
+    <py-script src="./temperature.py"></py-script>
+    <div class="grid grid-cols-2 p-4 m-auto bg-blue-100 border-2 justify-items-center">
+    <div>
+        <h4 class="font-semibold">Fahrenheit</h4>
+        <input id = "f-temp" class="w-3/4 bg-white border-4">
+    </div>
+    <div>
+        <h4 class="font-semibold">Celsuis</h4>
+        <input id="c-temp" class="w-3/4 bg-white border-4">
+    </div>
 </body>

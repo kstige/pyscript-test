@@ -6,6 +6,6 @@ def farh(cel):
     
 def convert(*ags, **kws):
     
-    celsius = document.getElementById('celsius').value;
+    celsius = document.getElementById('celsius').value
     result= farh(celsius)
     pyscript.write("Fahrenheit",result)  

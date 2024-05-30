@@ -1,25 +1,66 @@
-    <link
-        rel="stylesheet"
-        href="https://pyscript.net/releases/2023.11.2/core.css"
-    />
-    <script
-        type="module"
-        src="https://pyscript.net/releases/2023.11.2/core.js"
-    ></script>
-    <py-env>
-    - paths:
-        - /temperature.py
-  </py-env>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+        <title> Celsius To Fahrenheit </title>
+    
+    <!-- Pyscript -->
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <!--<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />-->
+    
+    <!-- bootstrap for styling , Pyscript can also be used for styling instead of bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <style>
+    
+    body {
+        background-color: #fcfcfc;
+        padding-top: 55px;
+        min-height: 100vh;
+        margin:0;
+        display:flex;
+        flex-direction:column;
+      }
+    </style>  
+    
 </head>
 <body>
-    <py-script src="./temperature.py"></py-script>
-    <div class="grid grid-cols-2 p-4 m-auto bg-blue-100 border-2 justify-items-center">
-    <div>
-        <h4 class="font-semibold">Fahrenheit</h4>
-        <input id = "f-temp" class="w-3/4 bg-white border-4">
-    </div>
-    <div>
-        <h4 class="font-semibold">Celsuis</h4>
-        <input id="c-temp" class="w-3/4 bg-white border-4">
-    </div>
-</body>
+
+<!-- write your Python code in py-script tag -->
+<py-script>
+    from js import document,alert
+
+def farh(cel):
+    return (float(cel) *(9/5)) + 32
+        
+    
+def convert(*ags, **kws):
+    
+    celsius = document.getElementById('celsius').value;
+    result= farh(celsius)
+    pyscript.write("Fahrenheit",result)    
+</py-script>    
+
+    <div class="container">
+        
+        <h1 class="text-center">
+            Celsius to Fahrenheit Converter
+        </h1>
+        <br />
+        <p><h3>Enter Temp in Calsius number:</h3>
+        <input id="celsius" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Enter Temp in Celsius" /></p>
+        <center>
+            <button id="convert" type="submit"  class="btn btn-info" pys-onClick="convert">Convert</button>
+
+        </center>
+        
+        <p>
+        <h4>Result:</h4>
+        <textarea id="Fahrenheit" class="form-control" rows="2" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Result"></textarea></p>
+    
+        
+    </div>    
+    
+    </body>
+    </html>   

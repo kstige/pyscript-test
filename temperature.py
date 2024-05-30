@@ -10,4 +10,4 @@ def convert(*ags, **kws):
     celsius = input_text.value
     result= farh(celsius)
     output_div = document.querySelector("#fahrenheit")
-    output_div.innerText = fahr(celsius)
+    output_div.innerText = result

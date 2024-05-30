@@ -4,7 +4,7 @@ def farh(cel):
     return (float(cel) *(9/5)) + 32
         
     
-def convert(*ags, **kws):
+def convert(event):
     
     input_text = document.querySelector("#celsius")
     celsius = input_text.value
